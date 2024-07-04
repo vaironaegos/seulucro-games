@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+  <!-- <script defer src="script.js"></script> -->
+
+  <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="js/socket.io.js"></script>
+  
+  <script type="module" src="js.js"></script>
+  <!-- <script src="https://unpkg.com/vue@3.2.20/dist/vue.global.js"></script> -->
+  
+
+  <!-- sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body  >
+
+
+  
+
+  <!-- <div style="display: flex; gap: 10px;">
+    <button id="btn1" class="btn btn-1 ripple" onclick="dia1.open()"> <i>search</i> Abrir 1</button>
+  </div> -->
+
+
+
+  <main id="app">
+
+    <!-- <input type="range" min="0" max="100" id="ran" step="0.01"> -->
+
+    <section class="section_main">
+      <!-- menu topo -->
+      <section class="menu">
+        <div id="icon_menu" style="display: none">
+          <img src="./imgs/menu.svg" />
+        </div>
+        <div class="automatic">
+          <label for="checkbox">
+            <input id="checkbox" type="checkbox" />
+            <!-- <p><img src="./imgs/auto.svg" /></p> -->
+          </label>
+        </div>
+        <div>
+          <!-- <p id="p_money">R$ 100</p> -->
+          <p id="p_money">{{money(user.wallet)}}</p>
+          <button class="btn btn--pink"><img src="./imgs/wallet.svg" /></button>
+        </div>
+      </section>
+
+     
+
+      <!-- bloco -->
+
+      <section id="bloco" class="bloco" style="overflow: hidden; ">
+
+        <section class="smoke" id="smoke">
+          <!-- <div></div> -->
+        </section>
+
+        <div class="loadbar"></div>
+        <!-- <img id="fundo1" src="./imgs/fundo1.svg" alt="" /> -->
+        <img id="fundo" src="./imgs/fundo.png" alt="" />
+
+        <div id="div_estrelas" class="estrelas"></div>
+        <svg id="svg" height="100%" width="100%">
+          <line id="svg_line" x1="0" y1="0" x2="200" y2="200" style="stroke: #e3014b; stroke-width: 5; z-index: 1 ;" />
+        </svg>
+
+
+        <img class="img_foguete" id="img_foguete" src="./imgs/foguete.svg" style="z-index: 12; " />
+        <!-- <section class="fire" id="rocket_fire">
+          <video id="fire2" loop muted autoplay="true"></video>
+          <video id="fire1" loop muted autoplay="true"></video>
+        </section> -->
+
+        <p id="p_texto" class="text_screen"></p>
+        <p id="p_texto_2" class="text_screen_2">{{ user.status == 'apostou' && game.status == 2 ? money(user.bet * user.porcent - user.bet)||'' : ''}}</p>
+
+        <p id="p_win" class="text"></p>
+      </section>
+
+      <section class="hud">
+        <div class="hud-box hud-box-1">
+
+          <label class="hud-box--in">
+            <span>R$</span>
+            <p>Quantia (R$)</p>
+            <input tabindex="1" required pattern="d+" id="inp_bet_value" type="number" step="0.01" v-model="user.bet" />
+            <!-- <input required pattern="d+" id="inp_mult_value" type="number" value="2" step="0.01"   /> -->
+          </label>
+
+          <button class="btn btn--blue--outline" id="bt_half">1/2</button>
+          <button class="btn btn--blue--outline" id="bt_double">x2</button>
+        </div>
+
+        <div class="hud-box hud-box-2">
+          <!-- <button class="btn btn--blue" id="bt_less">-</button> -->
+          <label data-content="Auto Retirar" class="hud-box--in">
+            <span>x</span>
+            <p>Auto retirar (x)</p>
+            <input tabindex="2" required pattern="d+" id="inp_mult_value" type="number" step="0.01" v-model="user.multiplier" />
+          </label>
+          <!-- <button class="btn btn--blue" id="bt_plus">+</button> -->
+        </div>
+        <button data-value="" tabindex="3" class="btn btn--pink badge" id="bt_main">Apostar</button>
+      </section>
+
+    </section>
+    
+    <!-- <section id="app">
+
+      <aside id="aside" class="aside aside--on">
+        <section id="div_historico" class="historico">
+          <button v-for="numero in historico" class="btn btn-outline">{{numero}}X</button>
+        </section>
+
+        <section class="dados">
+
+          <div>
+            <p>Jogadores {{bets.length}}</p>
+            <p>R$ {{quantbets()}}</p>
+          </div>
+
+          <table>
+            <thead>
+              <th>usuário</th>
+              <th>aposta</th>
+              <th>multiplicador</th>
+              <th>lucro</th>
+            </thead>
+            <tbody>
+              <tr v-for="item in bets">
+                <td> <img src='./imgs/crown_gold.svg'> {{item.name}}</td>
+                <td>R$ {{item.bet}}</td>
+                <td>{{item.mult}}x</td>
+                <td>{{item.lucro == 0 ? "-" : item.lucro}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </section>
+      </aside>
+    </section> -->
+
+    
+
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+input {
+  background-color: transparent;
+  border: solid 5px #120c0e;
+  outline: none;
+  text-align: center;
+  font-size: 1.2em;
+  height: 50px;
+  /* padding: 0 10px; */
+  border-radius: 5px;
+  font-weight: bold;
+  /* padding: 10px; */
+  /* grid-row: 2/3; */
+}

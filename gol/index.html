@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Gol</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" defer src="./script.js"></script>
+</head>
+<body>
+
+    <section id="el_campo">
+
+        <section id="selection_team">
+            <div class="selection" id="selection">
+                <div>
+                    <img class="clother" src="./imgs/clothers/argentina.png">
+                    <img class="flag" src="./imgs/flags/argentina.jpg">
+                </div>
+            </div>
+        </section>
+
+        <section class="hud_top">
+            
+            <img id="el_team1" src="./imgs/flags/brazil.jpg">
+            
+            <div class="grupo">
+
+                <div class="progress_up">
+                    <div id="el_progress" class="progress"></div>
+                </div>
+                
+                <div class="barra">
+                    <div class="text" data-value="x1.92"></div>
+                    <div class="text" data-value="x3.84"></div>
+                    <div class="text" data-value="x7.68"></div>
+                    <div class="text" data-value="x15.36"></div>
+                    <div class="text" data-value="x30.72"></div>
+                </div>
+
+            </div>
+
+            <img id="el_team2" src="./imgs/flags/germany.jpg">
+
+        </section>
+
+        <div class="painel">
+
+            <div class="inp text" data-value="Valor da aposta">
+                <p class="circle center" id="bt_less"><img width="30" src="./imgs/icons/less.svg"></p>
+                <p id="el_betvalue">R$ 2000</p>
+                <p class="circle center" id="bt_plus"><img width="30" src="./imgs/icons/plus.svg"></p>
+            </div>
+
+            <div class="maior"></div>
+
+            <div class="mid">
+                <div class="center" id="el_play">
+                    <img width="30" src="./imgs/icons/play.svg">
+                </div>
+                <div class="center" id="el_collect">
+                    <img width="30" src="./imgs/icons/getmoney.svg">
+                </div>
+                <!-- <p>Random</p> -->
+            </div>
+            
+            <div class="inp text" data-value="Ganhos R$">
+                <p id="el_earns">R$ 0,00</p>
+            </div>
+            <div class="inp text" data-value="Caixa R$">
+                <p id="el_cash">R$ 300,00</p>
+            </div>
+
+        </div>
+
+        <img id="el_character" src="imgs/character_normal.png">
+        <img id="el_ball" src="imgs/ball.png">
+        
+        <img class="ball_white" id="el_ball_choice_left" src="./imgs/ball_white.png" >
+        <img class="ball_white" id="el_ball_choice_leftup" src="./imgs/ball_white.png" >
+        <img class="ball_white" id="el_ball_choice_up" src="./imgs/ball_white.png" >
+        <img class="ball_white" id="el_ball_choice_rightup" src="./imgs/ball_white.png" >
+        <img class="ball_white" id="el_ball_choice_right" src="./imgs/ball_white.png" >
+
+    </section>
+
+    <!-- <div class="message">
+        <div class="message-in">
+            <div class="versus">
+                <img src="./imgs/flags/china.jpg">
+                <p>VS</p>
+                <img src="./imgs/flags/brazil.jpg">
+            </div>
+        </div>
+    </div> -->
+
+</body>
+</html>

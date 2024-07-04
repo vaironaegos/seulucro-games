@@ -1,0 +1,26 @@
+.hud-menu{
+    /* background-color: purple; */
+    /* display: flex; */
+    /* width: 600px; */
+    /* width: 900px;
+    height: 600px;
+    display: flex; */
+    max-width: 100%;
+    /* display: grid; */
+    /* grid-template-columns: 1fr max-content; */
+}
+
+.hud-menu-left{
+    /* background-color: red; */
+    /* flex: 1; */
+    /* order: 2; */
+}
+
+.hud-menu-right{
+    
+    /* background-color: blue; */
+    /* flex: 1; */
+    /* order: 1; */
+    /* width: 200px; */
+    /* display: flex; */
+}

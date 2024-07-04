@@ -1,0 +1,68 @@
+/* .bloco *{
+  transition: 0.5s;
+} */
+
+.bloco {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  background-color: #0c0b15;
+  /* background: linear-gradient(0deg, black, #0c0b15); */
+  overflow: hidden;
+  /* width: 500px; */
+  /* height: 500px; */
+}
+
+.bloco .estrelas {
+  background: url(../imgs/stars.png);
+  background-position: 0% 0%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: exclusion;
+  overflow: hidden;
+}
+
+.bloco .img_foguete {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: 0px;
+  right: 100%;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+
+.bloco #p_win {
+  background-color: #11111d99;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  font-size: 1.5em;
+}
+
+#fundo {
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  /* height: 100px; */
+  /* position: absolute; */
+  /* top: -100%; */
+  /* height: 100px; */
+  transform: translateY(-50%);
+  z-index: 0;
+
+  /* position: absolute; */
+}

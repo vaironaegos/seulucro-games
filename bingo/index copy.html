@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./vue.js"></script>
+
+    <script defer src="./p5.js"></script>
+    <script defer src="./matter.js"></script>
+    <script defer src="./animation.js"></script>
+
+    <script defer src="script.js"></script>
+    <script defer src="scriptvue.js"></script>
+
+    <script defer src="socket.js"></script>
+</head>
+
+<body>
+
+
+
+    <!-- <div class="loading-out" id="div_loading"> -->
+    <!-- <div> -->
+    <!-- <img src="./imgs/logo.png" id="img_loading"> -->
+    <!-- <p>Começa em 2:00</p> -->
+    <!-- <div class="loading"></div> -->
+    <!-- <div class="center_full" id="bar_loading">
+        <div class="bar_loading_out" id="bar_loading_out">
+            <div class="bar_loading_in" id="bar_loading_in"></div>
+        </div>
+    </div> -->
+
+    <!-- </div> -->
+    <!-- </div> -->
+
+    <!-- <section class="message_paper" id="div_msg_paper" style="display: none;"> -->
+    <!-- <section class="message_paper" id="div_msg_paper" style="none">
+        <div class="message_paper_in">
+            <div class="message_paper_in_text">
+                <p>Joaquim José - 240$ <img src="./imgs/trofeu.png" width="20px"> </p>
+                <p>Ana Lima - 20$</p>
+                <p>Renata Rocha - 20$</p>
+                <p>Josefa Ellen - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Jose - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+                <p>Joana Padro - 20$</p>
+            </div>
+        </div>
+    </section> -->
+
+    <main id="app">
+
+        <!-- <section class="dialog" id="div_dialog_bt_play">
+            <div class="dialog_in">
+                <img class="bt_play" id="bt_play" src="./imgs/play_button.png">
+            </div>
+        </section> -->
+
+        <section class="volume_control" >
+            <img id="volume_control" src="./icons/volume_off.svg">
+        </section>
+
+        <audio preload src="./audios/song2.mp3" style="display: none;" id="mainsong"></audio>
+
+        <!-- <div class="hud">
+            <p>tempo: {{time}}</p>
+            <p>jogadores: {{players_quant}}</p>
+        </div> -->
+
+        <!-- numeros -->
+        <!-- <section class="dialog" id="div_dia_1"> -->
+        <section class="dialog dialog-off" id="div_dia_1">
+            <div class="dialog-in">
+                <!-- <p>vamos</p> -->
+                <section class="numbers-container">
+                    <section class="numbers" id="e_numbers">
+                        <!-- <section class="number-item-checked">1</section> -->
+                        <!-- <section class="number-item"></section> -->
+                        <div class="ball ball-c ball-actived" v-for="bolas in bolas_chamadas"><span>{{bolas}}</span>
+                        </div>
+                        <!-- <div class="ball ball-c" v-for="bolas in bolas_chamadas"><span>{{bolas}}</span></div> -->
+                    </section>
+                </section>
+            </div>
+        </section>
+
+        <section class="dialog dialog-off" id="div_dia_2">
+            <div class="dialog-in">
+                <!-- <p>vamos</p> -->
+                <div class="message_paper_in">
+                    <div class="message_paper_in_text">
+
+                        <div v-if="nome_vencedor_tudo">
+                            <p>Parabéns aos ganhadores do nosso jogo de bingo! Que a sorte esteja sempre ao seu lado!</p>
+                            <p>Nº bolas chamadas: {{total_de_bolas}}</p>
+                            <br>
+                            <p><u>{{nome_vencedor_linha}} - {{valor_premio}} R$</u></p>
+                            <p><u>{{nome_vencedor_tudo}} - {{valor_linha}} R$</u></p>
+                        </div>
+                        <div v-else>
+                            <p>Que a sorte esteja ao seu lado! Que cada número sorteado traga alegria e entusiasmo, e que a diversão seja garantida para todos que jogarem. Estou na torcida pelo seu sucesso!</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- {{message}} -->
+
+        <!-- <section class="menu">
+            <div class="b1">
+                <img src="./imgs/star.png">
+            </div>
+            <div class="b2">
+                <div>Renato</div>
+                <div class="money">R$ 36.000,00 </div>
+            </div>
+        </section> -->
+
+        <section class="group-4">
+            <div id="globe"></div>
+            <section class="rool">
+                <section class="rool-in" id="div_rool_in">
+                    <div class="ball ball-c" v-for="bolas in bolas_chamadas"><span>{{bolas}}</span></div>
+                    <!-- <div class="ball ball-a"> <span>3</span> </div>
+                    <div class="ball ball-b"> <span>25</span> </div>
+                    <div class="ball ball-c"> <span>17</span> </div>
+                    <div class="ball ball-d"> <span>15</span> </div>
+                    <div class="ball ball-e"> <span>27</span> </div>
+                    <div class="ball ball-e"> <span>30</span> </div>
+                    <div class="ball ball-e"> <span>50</span> </div>
+                    <div class="ball ball-e"> <span>51</span> </div>
+                    <div class="ball ball-e"> <span>37</span> </div> -->
+                </section>
+            </section>
+        </section>
+
+
+        <!-- <img src="./imgs/background_wood.png"> -->
+
+        <!-- <section class="wood_rool" id="div_animation"> -->
+        <!-- <div id="globe"></div> -->
+        <!-- </section> -->
+
+        <!-- <section class="numbers-container">
+                <section class="numbers" id="e_numbers">
+                    <section class="number-item-checked">1</section>
+                    <section class="number-item"></section>
+                </section>
+            </section> -->
+
+        <!-- <section class="card">
+                    <div class="card-item">4</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item">20</div>
+                    <div class="card-item-checked">16</div>
+                    <div class="card-item">27</div>
+                    <div class="card-item">4</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item">20</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item-checked">27</div>
+                    <div class="card-item">4</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item">20</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item">27</div>
+                    <div class="card-item">4</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item">20</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item">27</div>
+                    <div class="card-item">4</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item">20</div>
+                    <div class="card-item">16</div>
+                    <div class="card-item">27</div>
+                </section> -->
+
+        <section class="list-model-1 group-3">
+            <section :data-num="item.code" class="card-mini" v-for="item in cartelas_payload.player.cards">
+                <div class="card-item" v-for="item2 in item.numbers">{{item2}}</div>
+            </section>
+        </section>
+
+
+
+
+        <!-- <section class="list-model-1 group-3" > -->
+        <!-- <section data-num="#0001" class="card-mini" v-for="item in cartelas"> -->
+        <!-- <div  class="card-item" v-for="item2 in item">{{item2}}</div> -->
+        <!-- <div class="card-item">25</div> -->
+        <!-- <div class="card-item-checked">27</div> -->
+        <!-- </section> -->
+        <!-- </section> -->
+
+
+
+
+        <!-- <h1>List</h1> -->
+
+        <!-- <h1>Ranking</h1> -->
+        <!-- <img src="https://i.pinimg.com/originals/42/77/ae/4277ae71a295e64b2148519aca4042cd.png" width="30px"> -->
+
+        <footer class="footer">
+            <section>
+                <!-- <section class="menu">
+                    <div class="b1">
+                        <img src="./imgs/star.png">
+                    </div>
+                    <div class="b2">
+                        <div>Renato</div>
+                        <div class="money">R$ 36.000,00 </div>
+                    </div>
+                </section> -->
+                <div class="icon" onclick="abrir(div_dia_1)"><img src="./imgs/bt_1.png"></div>
+                <div class="icon" onclick="abrir(div_dia_2)"><img src="./imgs/bt_2.png"></div>
+                <div class="icon" onclick='fetch("https://start.topbingos.com.br")'><img src="./imgs/bt_1.png"></div>
+                <!-- <div class="icon" onclick="abrir(div_dia_2)"><img src="./imgs/bt_1.png"></div> -->
+                <!-- <div class="icon"><img src="./imgs/bt_1.png"></div> -->
+                <!-- <div class="icon"><img src="./imgs/bt_1.png"></div> -->
+                <!-- <div class="icon"><img src="./imgs/bt_1.png"></div> -->
+    
+    
+    
+            </section>
+        </footer>
+    </main>
+
+
+
+    
+
+    <!-- <audio id="audlinha" preload="true" src="./audios/uma_linha.mp3"></audio>
+    <audio id="audcartela" preload="true" src="./audios/fechou_cartela.mp3"></audio> -->
+
+    <!-- <div class="verificacao" id="verificacao"> -->
+        <!-- <br><audio muted autoplay="true" id="audlinha" controls> <source  preload="true" src="./audios/uma_linha.mp3" type="audio/mpeg"> </audio> -->
+        <!-- <br><audio muted autoplay="true" id="audcartela" controls> <source  preload="true" src="./audios/fechou_cartela.mp3" type="audio/mpeg"> </audio> -->
+    <!-- </div> -->
+
+    <!-- ./audios/uma_linha
+./audios/fechou_cartela -->
+
+    <!-- <section class="message_down" id="msg_box"> -->
+    <!-- <div class="profile">
+            <img src="./imgs/caitlyn.png">
+            <div>
+                <p>Fulano</p>
+                <p>Acabou de fazer uma linha</p>
+            </div>
+        </div> -->
+    <!-- </section> -->
+
+    <!-- <section class="menu">
+        <div class="b1">
+            <img src="./imgs/star.png">
+        </div>
+        <div class="b2">
+            <div>Renato</div>
+            <div class="money">R$ 36.000,00 </div>
+        </div>
+    </section> -->
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+.explosion{
+  width: 10px;
+  height: 10px;
+  /* position: fixed; */
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  /* border: solid white 1px; */
+  z-index: 20;
+  pointer-events: none;
+  z-index: 60;
+}
+
+.explosion > div{
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px #FFFFFF55;
+  box-shadow: 3px 3px 3px #00000055;
+}
+
+.explosion div::after{
+  content: '';
+  width: 70%;
+  height: 70%;
+  background-color: #ffffff55;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}

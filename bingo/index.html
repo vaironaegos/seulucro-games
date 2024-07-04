@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./vue.js"></script>
+
+    <script defer src="./p5.js"></script>
+    <script defer src="./matter.js"></script>
+    <script defer src="./animation.js"></script>
+
+    <script defer src="script.js"></script>
+    <script defer src="scriptvue.js"></script>
+
+    <script defer src="socket.js"></script>
+</head>
+
+<body>
+
+    <!-- aqui -->
+
+    <!-- <section class="dialog" id="div_dialog_bt_play">
+        <div class="dialog_in">
+            <div class="bar_loading_out" id="bar_loading_out">
+                <div class="bar_loading_in" id="bar_loading_in"></div>
+            </div>
+            <img class="bt_play" id="bt_play" src="./imgs/play_button.png" style="display: none;">
+        </div>
+    </section> -->
+
+    <section class="volume_control fade">
+        <img id="volume_control" src="./icons/volume_off.svg" class="pulse">
+        <p id="div_sound_active">Ative o som</p>
+    </section>
+
+    <audio  loop preload src="./audios/song2.mp3" style="display: none;" id="mainsong"></audio>
+
+
+    <!-- <section class="message_down" id="msg_box"> -->
+    <!-- <div></div> -->
+    <!-- <div class="profile">
+            <img src="./imgs/caitlyn.png">
+            <div>
+                <p>Fulano</p>
+                <p>Acabou de fazer uma linha</p>
+            </div>
+        </div> -->
+    <!-- </section> -->
+
+
+
+
+    <!-- fim -->
+
+    <!-- <span class="loader"></span> -->
+    <!-- <div class="center_full" id="bar_loading"> -->
+        <!-- <div class="bar_loading_out" id="bar_loading_out"> -->
+            <!-- <div class="bar_loading_in" id="bar_loading_in"> -->
+                <!-- <span class="loader"></span> -->
+                <!-- <img src="./imgs/logo.png" id="img_loading"> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+
+    <section class="dialog" id="div_loading">
+        <div class="dialog_in">
+            <div id="div_load_1" style="text-align: center;">
+                <img src="./imgs/logo.png" width="300px">
+                <br>
+                <br>
+                <span class="loader"></span>
+            </div>
+            <!-- <img style="display: none;" class="bt_play" id="bt_play" src="./imgs/play_button.png" onclick="Dialog.close(div_dialog_bt_play)"> -->
+        </div>
+    </section>
+
+    <main id="app">
+
+        <!-- dialog bolas chamadas -->
+        <section class="dialog dialog-off" id="div_dia_1">
+            <div class="dialog-in">
+                <div class="dialog_bt_close"></div>
+                <!-- <p>vamos</p> -->
+                <section class="numbers-container">
+                    <section class="numbers" id="e_numbers">
+                        <!-- <section class="number-item-checked">1</section> -->
+                        <!-- <section class="number-item"></section> -->
+                        <div class="ball ball-c ball-actived" v-for="bolas in bolas_chamadas_r"><span>{{bolas}}</span>
+                        </div>
+                        <!-- <div class="ball ball-c" v-for="bolas in bolas_chamadas"><span>{{bolas}}</span></div> -->
+                    </section>
+                </section>
+            </div>
+        </section>
+
+        <!-- msg box -->
+        <!-- <section class="message_down" id="msg_box"></section> -->
+
+        <div class="center_full" id="div_invalid" style="display: none;">
+            <div id="div_msg_1" style="padding: 10px;background-color: white;">Requisição inválida</div>
+        </div>
+
+        <!-- message box -->
+        <section class="message_down">
+            <div id="div_msg_1" class="profile none"> O Bingo vai iniciar em {{t1}}</div>
+            <div id="div_msg_2" class="profile none"> O Bingo vai iniciar em {{t2}}</div>
+            <!-- <div class="profile"> <img src="./imgs/trofeu.png">Ana Linha</div> -->
+        </section>
+
+        <!-- dialog resultado do jogo -->
+        <section class="dialog dialog-off" id="div_dia_2">
+            <div class="dialog-in">
+                <div class="dialog_bt_close" style="top: 0px;"></div>
+                <div class="message_paper_in">
+                    <div class="message_paper_in_text">
+
+                        <div v-if="nome_vencedor_tudo">
+                            <p>Parabéns aos ganhadores do nosso jogo de bingo! Que a sorte esteja sempre ao seu lado!
+                            </p>
+                            <p>Nº bolas chamadas: {{total_de_bolas}}</p>
+                            <br>
+                            <p><u>{{nome_vencedor_linha}} - {{valor_premio}} R$</u></p>
+                            <p><u>{{nome_vencedor_tudo}} - {{valor_linha}} R$</u></p>
+                        </div>
+                        <div v-else>
+                            <p>Que a sorte esteja ao seu lado! Que cada número sorteado traga alegria e entusiasmo, e
+                                que a diversão seja garantida para todos que jogarem. Estou na torcida pelo seu sucesso!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- bloco 1 -->
+        <div class="a fade">
+            <section class="group-4">
+                <div id="globe"></div>
+                <section class="fade rool">
+
+                    <div class="names">
+                        <p>Vencedor Cheia: <b>{{nome_vencedor_tudo}}</b></p>
+                        <p>Vencedor Linha: <b>{{nome_vencedor_linha}}</b></p>
+                    </div>
+
+                    <div class="ball ball-c button_expand" id="button_expand" onmousedown="Dialog.open(div_dia_1)"><span><img
+                                src="./icons/expand.svg"></span></div>
+
+                    <!-- <div class="balls-dot"></div> -->
+                    <section class="rool-in" id="div_rool_in">
+                        <div class="ball ball-c" v-for="bolas in bolas_chamadas"><span>{{bolas}}</span></div>
+                    </section>
+                </section>
+            </section>
+        </div>
+
+        <!-- bloco 2 -->
+        <div class="b fade">
+            <section class="list-model-1 group-3">
+                <section :data-num="item.code" class="card-mini" v-for="item in cartelas_payload.player.cards">
+                    <div class="card-item" v-for="item2 in item.numbers">{{item2}}</div>
+                </section>
+            </section>
+        </div>
+
+        <!-- bloco 3 -->
+        <!-- <div class="c">
+            <footer class="footer fade">
+                <section>
+               
+                    <div class="icon fade" onclick="abrir(div_dia_1)"><img src="./imgs/bt_1.png"></div>
+                    <div class="icon fade" onclick="abrir(div_dia_2)"><img src="./imgs/bt_2.png"></div>
+                    <div class="icon fade" onclick='fetch("https://start.topbingos.com.br")'><img src="./imgs/bt_1.png">
+                    </div>
+                    
+                </section>
+            </footer>
+        </div> -->
+
+        <div style="position: fixed; bottom: 10px; right: 10px;" class="icon fade"
+            onclick='fetch("https:\/\/start.topbingos.com.br")'><img src="./imgs/bt_1.png">
+
+    </main>
+
+
+
+
+
+
+</body>
+
+</html>

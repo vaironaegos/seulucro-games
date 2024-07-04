@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- <script src="utils.js"></script> -->
+  </head>
+  <body id="app">
+
+    <div id="loadingpage">
+      <img src="./imgs/loading_page.svg">
+    </div>
+
+    <main id="topo">
+      <header>
+        <p id="p_wallet" class="p_wallet">R$ 200,00</p>
+        <img height="30px" src="./imgs/wallet.svg" />
+      </header>
+
+      <section class="hud-menu">
+        <section class="hud-menu-left">
+          <section class="bloco" id="bloco">
+            <div class="seta"></div>
+
+            <div id="div_aguardar" class="aguardar">
+              <p>FAÇA SUA APOSTA</p>
+              <div>
+                <div id="bar_pink" class="bar-pink"></div>
+              </div>
+            </div>
+
+            <div class="cards" id="div_cards">
+              <div id="cards_in"></div>
+              <!-- <div class="card card--green"> <p>1</p> </div> -->
+            </div>
+          </section>
+
+          <section id="div_historico" class="historico">
+            <!-- <button class="btn btn-green">1</button> -->
+            <!-- <button class="btn btn-green">1</button> -->
+            
+            <!-- <button v-for="item in historic.list" class="btn btn-green">{{item}}</button> -->
+            <!-- <button v-for="item in list" v-bind:class="ok" class="btn btn-green">{{item < 3 ? 'a' : 'b'}}</button> -->
+            
+            <button 
+            v-for="item in list"
+            class="btn" 
+            v-bind:class=" item == 1 ? 'btn-blue' : item == 3 ? 'btn-white' : 'btn-green  ' " 
+            >   
+            <!-- {{item}} -->
+            <p></p>
+            </button>
+
+            <!-- <button class="btn btn-green">1</button> -->
+            <!-- <button class="btn btn-blue">2</button> -->
+            <!-- <button class="btn btn-white">3</button> -->
+          </section>
+        </section>
+
+        <section class="hud-menu-right">
+          <section class="escolha">
+            <button
+              id="btn_escolha_1"
+              class="btn btn-green btn-choice "
+            >
+              2x
+            </button>
+            <button id="btn_escolha_2" class="btn btn-white btn-choice">
+              14x
+            </button>
+            <button id="btn_escolha_3" class="btn btn-blue btn-choice">
+              2x
+            </button>
+          </section>
+
+          <section class="hud">
+            <button id="btn_half" class="btn btn-pink-outline btn_half">1/2</button>
+            <button id="btn_double" class="btn btn-pink-outline btn_double">x2</button>
+            
+            <label for="inp_betvalue" class="input input-dark">
+              <input disabled id="inp_betvalue" class="inp_betvalue" value="R$ 200,00" />
+            </label>
+
+
+            <button id="btn_apostar" class="btn_apostar btn btn-pink">Apostar</button>
+          </section>
+        </section>
+      </section>
+
+    </main>
+
+    <!-- inicio vue -->
+    <div id="table">
+
+      <!-- <img id="img" src="./imgs/loading.svg"> -->
+
+      <main class="pages">
+        <section class="page">
+          <div class="title"> 
+            <span class="square square--green"></span>
+            <span>vitória </span>
+            <span>2x</span>
+          </div>
+  
+          <div class="t-right">
+            <b>Total: R$ {{lista_b_total}}</b>
+          </div>
+  
+          <!-- table -->
+          
+          <table class="table table-striped table-dark" id="tabela_1">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="left">Usuário</th>
+                <th class="right">Quantia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in lista_b">
+                <td class="img"><img src="./imgs/crown_gold.svg" style="margin-right: 5px;"> </td>
+                <td class="left">{{item.user.username}}</td>
+                <td class="right">R$ {{item.betAmount}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- endtable -->
+          <p>{{lista_b_quantity}} jogadores</p>
+
+        </section>
+        <section class="page">
+          <div class="title"> 
+            <span class="square square--white"></span>
+            <span>vitória </span>
+            <span>14x</span>
+          </div>
+
+          <div class="t-right">
+            <b>Total: R$ {{lista_c_total}}</b>
+          </div>
+
+          <!-- table -->
+          <table class="table table-striped table-dark" id="tabela_2">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="left">Usuário</th>
+                <th class="right">Quantia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in lista_c">
+                <td class="img"><img src="./imgs/crown_gold.svg" style="margin-right: 5px;"> </td>
+                <td class="left">{{item.user.username}}</td>
+                <td class="right">R$ {{item.betAmount}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- endtable -->
+          <p>{{lista_c_quantity}} jogadores</p>
+        </section>
+        <section class="page">
+          <div class="title"> 
+            <span class="square square--blue"></span>
+            <span>vitória </span>
+            <span>2x</span>
+          </div>
+
+          <div class="t-right">
+            <b>Total: R$ {{lista_a_total}}</b>
+          </div>
+
+          <!-- table -->
+          <table class="table table-striped table-dark" id="tabela_3">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="left">Usuário</th>
+                <th class="right">Quantia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in lista_a">
+                <td class="img"><img src="./imgs/crown_gold.svg" style="margin-right: 5px;"> </td>
+                <td class="left">{{item.user.username}}</td>
+                <td class="right">R$ {{item.betAmount}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- endtable -->
+          <p>{{lista_a_quantity}} jogadores</p>
+        </section>
+  
+      </main>
+    </div>
+    <!-- fim vue -->
+
+
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

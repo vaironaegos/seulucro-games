@@ -1,0 +1,41 @@
+@media (max-width: 600px) {
+    .cards{
+      /* grid-template-columns: repeat(4, 1fr); */
+      height: 350px;
+    }
+
+    .card img{
+      width: 30px;
+      height: 30px;
+    }
+
+    .info{
+      width: 100px;
+      display: block;
+      text-align: center;
+    }
+
+    .info img{
+      display: none;
+    }
+    
+    .wallet{
+      display: none;
+    }
+
+    .menu *{
+      font-size: 12px;
+    }
+
+    .choicebomb {
+      position: relative;
+      box-shadow: none;
+      padding: 0px;
+      display: flex;
+      align-items: center;
+      width: 80px;
+    }
+
+    #p_wallet{ color: #8bc34a; }
+
+}

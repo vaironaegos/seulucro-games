@@ -1,0 +1,80 @@
+:root {
+  --cube-size: 100px;
+  --cube-distance: calc(var(--cube-size) / 2);
+  --cube-distance-neg: calc(var(--cube-size) / 2 * -1);
+}
+
+.cube {
+  /* width: 400px; */
+  height: 100px;
+  transform: translateY(50px);
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cubo {
+  width: var(--cube-size);
+  height: var(--cube-size);
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.cubo > div {
+  width: var(--cube-size);
+  height: var(--cube-size);
+  position: absolute;
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 0px 3px #d9d9d9, inset 0px 0px 0px 3px #d9d9d9; */
+  /* background-color: #d9d9d9; */
+  background: linear-gradient(30deg, #7c7373, #d9d9d9);
+  background: linear-gradient(30deg, #c6b6b6, #d9d9d9);
+  /* overflow: hidden; */
+}
+
+.cubo > div > img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cubo .a {
+  transform: translateZ(var(--cube-distance));
+}
+
+.cubo .b {
+  transform: translateZ(var(--cube-distance-neg));
+}
+
+.cubo .c {
+  transform: rotateX(90deg) translateZ(var(--cube-distance));
+}
+
+.cubo .d {
+  transform: rotateX(90deg) translateZ(var(--cube-distance-neg));
+}
+
+.cubo .e {
+  transform: rotateY(90deg) translateZ(var(--cube-distance-neg));
+}
+
+.cubo .f {
+  transform: rotateY(90deg) translateZ(var(--cube-distance));
+}
+
+.cubo-vel-1 {
+  animation: rot-1 20s infinite linear;
+}
+
+.cubo-vel-2 {
+  animation: rot-1 1s infinite linear;
+}
+
+@keyframes rot-1 {
+  0% {
+    transform: rotateX(0deg) rotateY(360deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(0deg);
+  }
+}

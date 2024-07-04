@@ -1,0 +1,57 @@
+#selection_team{
+    background:  url("../imgs/background_select_team.jpg");
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    /* display: none; */
+    transition: 0.5s;
+    background-size: cover;
+}
+
+.selection img{
+    width: 100%;
+}
+
+.selection{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 500px;
+}
+
+.selection div{
+    overflow: hidden;
+    background-color: blue;
+    box-shadow: 0px 0px 3px black;
+    gap: 10px;
+    max-width: 100%;
+    height: 100px;
+    position: relative;
+    transition: 0.1s;
+}
+
+.selection div:hover{
+    box-shadow: 0px 0px 0px 3px white;
+    /* background-color: black;
+    opacity: 0.5; */
+}
+
+.selection .clother{
+    position: absolute  ;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: 0.3s;
+    translate: 0px 30px
+}
+
+.selection div:hover .clother{
+    opacity: 1;
+    transition: 0.2s;
+    translate: 0px 10px;
+    cursor: pointer;
+}

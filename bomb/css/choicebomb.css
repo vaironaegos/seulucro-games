@@ -1,0 +1,80 @@
+.choicebomb * {
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.choicebomb img{
+    width: 30px;
+}
+
+.choicebomb {
+    position: relative;
+    box-shadow: 0px 0px 0px 2px var(--brown-0);
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    width: 80px;
+}
+
+.choicebomb:hover .choicebomb-select-window {
+    opacity: 1;
+    translate: 0px;
+    pointer-events: inherit;
+}
+
+.choicebomb-select-window {
+    position: absolute;
+    width: 200px;
+    min-height: 200px;
+    display: block;
+    /* top: 100%; */
+    top: 0;
+    left: 0;
+    background-color: var(--brown-1);
+    opacity: 0;
+    translate: 0 10px;
+    pointer-events: none;
+    display: grid;
+    grid-template-rows: 2fr min-content;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #00000055, 0px 0px 0px 5px var(--brown-0);
+    z-index: 6;
+}
+
+.choicebomb-select-window-buttons {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    place-items: center;
+    
+}
+
+.choicebomb-select-window-buttons button{
+    padding: 10px;
+    border-radius: 2px;
+    background-color: var(--brown-2);
+    border: none;
+    outline: none;
+    color: #72595f;
+    font-weight: bold;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+
+.choicebomb-select-window-status{
+    display: flex;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.choicebomb-select-window-status img{
+    vertical-align: middle;
+}

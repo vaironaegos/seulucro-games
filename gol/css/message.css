@@ -1,0 +1,78 @@
+.message{
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #fcc329; */
+
+  width: 500px;
+  height: 300px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+
+.message .versus{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0em 2em ;
+  background-color: #ffffff55;
+  color: white;
+  border-radius: 10px;
+}
+
+.message .versus p{
+  font-size: 5em;
+  display: block;
+  -webkit-text-stroke: 5px blue;
+  font-weight: 900;
+}
+
+.msg {
+  --c1: #fcc329;
+  --c2: #ce3517;
+  --c1: #fff;
+  --c2: #015182;
+  font-size: 50px;
+  font-weight: 500;
+  color: var(--c2);
+  text-shadow: 1px 1px var(--c1), -1px 1px var(--c1), 1px -1px var(--c1), -1px -1px var(--c1);
+  position: absolute;
+  /* background-color: red; */
+}
+
+.message .versus img{
+  width: 100px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #00000055;
+}
+
+.message-show-in{
+  animation: in 1s forwards, out 1s 2s forwards;
+}
+
+.message-show-out{
+  animation: out 1s forwards;
+}
+
+.message-show-in-out{
+  animation: in 0.5s forwards, out 0.5s 2s forwards;
+}
+
+@keyframes in{
+  0%{scale: 0.5; opacity: 0; visibility: visible;}
+  100%{scale: 1; opacity: 1}
+}
+
+@keyframes out{
+  0%{opacity: 1; scale: 1}
+  100%{opacity: 0; scale: 0.5; visibility: hidden;}
+}

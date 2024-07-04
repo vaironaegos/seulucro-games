@@ -1,0 +1,33 @@
+.text_screen, .text_screen_2 {
+  position: absolute;
+  top: 0px;
+  /* right: 0px; */
+  /* left: 50%; */
+  /* width: 100%; */
+  padding: 0 0.5em;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.text_screen_2{
+  font-size: 1.5em;
+  color: var(--green);
+  border-top: dashed 1px #43a047;
+  top: 65px;
+  left: 20px;
+  width: 200px;
+}
+
+.t-green {
+  color: #43a047;
+}
+
+.t-blue {
+  color: #22599c;
+}
+
+.t-pink {
+  color: #d81456;
+}
+

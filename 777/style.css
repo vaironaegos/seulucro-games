@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orelega+One&display=swap");
+
+@import "./css/variables.css";
+@import "./css/menu-top.css";
+@import "./css/info-1.css";
+@import "./css/info-2.css";
+@import "./css/info-3.css";
+@import "./css/historic.css";
+@import "./css/buttons.css";
+@import "./css/stats.css";
+@import "./css/input.css";
+@import "./css/scroll.css";
+@import "./css/msg.css";
+@import "./css/sete.css";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--dark-blue-1);
+}
+main {
+  width: 800px;
+  margin: auto;
+  max-width: 90%;
+}
+/* 
+main section:first-child {
+  margin-top: 0px;
+} */
+
+section {
+  margin: 10px auto;
+  margin: 10px auto;
+  /* max-width: 90%; */
+}

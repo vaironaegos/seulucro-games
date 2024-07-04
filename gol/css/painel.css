@@ -1,0 +1,107 @@
+.painel{
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100px;
+  /* background-color: red; */
+  background: linear-gradient(transparent, black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  /* background-color: red; */
+  z-index: 4;
+}
+
+.painel > div{
+  /* background-color: white; */
+  /* box-shadow: 0px 0px 3px black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px  ;
+  gap: 20px;
+  flex: 1;
+}
+
+.painel .maior{
+  /* flex: 2; */
+  width: 500px;
+  /* background-color: red; */
+}
+
+.painel .inp{
+  background-color: #00000099;
+  color: white;
+  padding: 11px 10px;
+  padding-bottom: 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  width: 200px;
+  width: calc(200px - 5vw);
+  white-space: pre;
+  /* overflow: hidden; */
+}
+
+.painel .circle{
+  border-radius: 100%;
+  background-color: white;
+  color: black;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(7px);
+  cursor: pointer;
+}
+
+.painel .circle img{
+  /* transform: translateY(20px); */
+}
+
+.painel .circle .center, .painel .center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.painel .mid{
+  /* display: grid; */
+  /* gap: 0px */
+}
+
+.painel .flex-1{
+  flex: 1;
+}
+
+.painel .mid div{
+  background-color: white;
+  border-radius: 100%;
+  padding: 8px;
+}
+
+.text{
+  position: relative;
+}
+
+.text::after{
+  content: attr(data-value);
+  bottom: 2px;
+  position: absolute;
+  font-size: 12px;
+  font-weight: 200;
+  /* background-color: red; */
+  /* padding: 10px; */
+}
+
+/* #el_play:hover{
+  scale: 1.1;
+  cursor: pointer;
+} */
+
+.painel .center:hover{
+  scale: 1.1;
+  cursor: pointer;
+}

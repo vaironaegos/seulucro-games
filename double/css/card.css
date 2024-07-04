@@ -1,0 +1,52 @@
+.card {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px #00000055;
+}
+
+.card p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  /* box-shadow: 0px 0px 0px 5px #000; */
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.card--blue {
+  background-color: var(--blue-2);
+}
+
+.card--green {
+  background-color: var(--green-1);
+}
+
+.card--white {
+  background-color: var(--white-1);
+}
+.card--blue p {
+  color: var(--blue-1);
+  box-shadow: 0px 0px 0px 7px var(--blue-1);
+}
+.card--green p {
+  color: var(--green-2);
+  box-shadow: 0px 0px 0px 7px var(--green-2);
+}
+.card--white p {
+  box-shadow: 0px 0px 0px 7px var(--white-2);
+  color: var(--white-2);
+}
+
+#cards_in {
+  /* background-color: red; */
+  display: flex;
+  gap: 10px;
+}

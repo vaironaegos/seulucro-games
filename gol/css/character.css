@@ -1,0 +1,19 @@
+#el_character {
+  position: absolute;
+  max-width: 35%;
+  /* width: 416px; */
+  width: 35%;
+  /* top: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto; */
+  /* transition: 0.5s; */
+  /* scale: 0.5; */
+  /* width: 300px; */
+
+  /* transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%; */
+
+}

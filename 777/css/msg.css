@@ -1,0 +1,31 @@
+.msg {
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 1em;
+  opacity: 1;
+  scale: 1;
+  transition: 0.5s;
+}
+
+.msg > h1 {
+  width: 400px;
+  max-width: 90%;
+  margin: auto;
+  background: linear-gradient(90deg, transparent, var(--pink-1), transparent);
+  text-shadow: 0px 0px 3px black;
+}
+
+.msg-off {
+  opacity: 0;
+  scale: 0.5;
+  transition: 0.5s;
+}
+
+.msg-on {
+  opacity: 1;
+  scale: 1;
+  transition: 0.5s;
+}

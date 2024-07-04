@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer type="module" src="./js/axios.js"></script>
+    <script defer type="module" src="script.js"></script>
+    
+    <link rel="stylesheet" href="dropdown/dropdown.css">
+    <script defer src="./dropdown/dropdown.js"></script>
+
+  </head>
+  <body>
+    
+    <header class="menu">
+
+      <div class="choicebomb">
+        <img src="./imgs/bomb.png">
+        <p>3</p>
+        <img src="./imgs/arrow_down.svg">
+        <div class="choicebomb-select">
+          <!-- inicio boms -->
+          <section class="choicebomb-select-window">
+
+            <div class="choicebomb-select-window-buttons buttons">
+              <button value="1">1</button>
+              <button value="2">2</button>
+              <button value="3">3</button>
+              <button value="4">4</button>
+              <button value="5">5</button>
+              <button value="6">6</button>
+              <button value="7">7</button>
+              <button value="8">8</button>
+              <button value="9">9</button>
+              <button value="10">10</button>
+              <button value="11">11</button>
+              <button value="12">12</button>
+              <button value="13">13</button>
+              <button value="14">14</button>
+              <button value="15">15</button>
+              <button value="16">16</button>
+              <button value="17">17</button>
+              <button value="18">18</button>
+              <button value="19">19</button>
+              <button value="20">20</button>
+              <button value="21">21</button>
+              <button value="22">22</button>
+              <button value="23">23</button>
+              <button value="24">24</button>
+            </div>
+
+            <div class="choicebomb-select-window-status">
+              <div>
+                <img src="./imgs/bomb.png">
+                <span id="p_statBomb">5</span>
+              </div>
+              <div>
+                <img src="./imgs/coin.png">
+                <span id="p_statCoin">5</span>
+              </div>
+            </div>
+
+          </section>
+          <!-- fim bombs -->
+        </div>
+      </div>
+
+      <!-- <section style="display: flex; gap: 10px;"> -->
+        <section class="info" data-msg="PARAR">
+          <img src="./imgs/coin.png" />
+          <p id="p_moneyPast">R$ 255</p>
+        </section>
+  
+        <section class="info" data-msg="CONTINUAR">
+            <img src="./imgs/coin.png" />
+            <p id="p_moneyGame">R$ 255</p>
+          <!-- <p id="p_multGame">3.5x</p> -->
+        </section>
+      <!-- </section> -->
+
+      <div>
+        <button id="p_wallet">R$ 10</button>
+        <img class="wallet" src="./imgs/wallet.svg" alt="" />
+      </div>
+
+    </header>
+
+    <main>
+      
+
+      <section id="cards" class="cards">
+        <div class="card">
+          <div class="card-in">
+            <!-- <img src="./imgs/coin.png" /> -->
+            <img src="." />
+          </div>
+        </div>
+      </section>
+
+      <section class="hud">
+        <button id="btn_half_2">1/2</button>
+        <button id="btn_half">-</button>
+        <input id="inp_betValue" disabled type="text" value="R$ 1,00" />
+        <button id="btn_double">+</button>
+        <button id="btn_double_2">x2</button>
+        <button id="btn_apostar" class="btn_apostar">Apostar</button>
+      </section>
+      
+      <div style="display:flex;gap: 1em; position: relative; background-color: #120c0e; border-radius: 5px;">
+        <button style="width: 70%;" id="btn_sorte" class="btn_apostar">Sorte</button>
+        <!-- <input disabled style="width: 30%;" field="lista" placeholder="Pesquisar" id="inp" type="text" value="5"/> -->
+        <p class="square" style="width: 30%; " field="lista" id="inp" type="text" value="5">
+          5
+          <ul id="lista" style="width: 200px;right: 0px; bottom: 0px; height: 0px; ">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+          </ul>
+        </p>
+
+      </div>
+      
+      <footer>
+        <h1>Informações</h1>
+        <p>1. Quanto maior a quantidade de minas no campo, maior o ganho.</p>
+        <p>2. Quanto maior a quantidade de moedas encontradas, maiores os ganhos.</p>
+        <p>3. O jogo termina quando você encontra uma mina.</p>
+        <p>4. Ao pressionar o número 1 do teclado, é equivalente a clicar no botão principal de início de jogo</p>
+        <p>4. Ao pressionar o número 2 do teclado, o jogo fará escolhas aleatórias</p>
+      </footer>
+
+    </main>
+  </body>
+</html>

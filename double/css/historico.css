@@ -1,0 +1,40 @@
+.historico {
+  background-color: var(--purple-3);
+  /* padding: 1em; */
+  display: flex;
+  gap: 10px;
+  /* border-top: dashed 1px gray; */
+  padding: 1em;
+  border-radius: 0 0 5px 5px;
+  overflow-x: hidden;
+
+  /* margin-top: 10px; */
+}
+
+.historico button {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.historico button p{
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  border-radius: 100%;
+  outline: solid 3px #00000099;
+}
+
+.historico button:nth-child(1){
+  /* box-shadow: 0 0 0 3px white;
+  scale: 1.1; */
+}

@@ -1,0 +1,73 @@
+.card {
+  width: 100%;
+  height: 100%;
+  background: #412a30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transform-style: preserve-3d;
+  perspective: 1000;
+  background: #120c0e url("../imgs/questmark.png") no-repeat center;
+  background-size: 60%;
+  cursor: pointer;
+  
+  border: solid 5px var(--brown-0);
+  /* background: #120c0e url("../imgs/card.jpg") no-repeat center; */
+  /* background-size: 100%; */
+  /* background-color: red; */
+
+}
+
+.card div {
+  transform: translateZ(-1px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #120c0e;
+}
+
+.flop {
+  transform: rotateY(0deg);
+  transition: 0.3s;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  transition: 0.3s;
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+  transform: translateZ(1px);
+}
+
+.card img{
+  width: 40px;
+  height: 40px;
+}
+
+/* .card--red div {
+  box-shadow: inset 0px 0px 10px 10px #ff000040, inset 0px 0px 0px 5px #ff0000;
+}
+.card--yellow div {
+  box-shadow: inset 0px 0px 10px 10px #e5ff0040, inset 0px 0px 0px 5px #ffea00;
+} */
+
+
+.card--red > .card-in {
+  /* box-shadow: inset 0px 0px 5px 5px #ff000040, inset 0px 0px 0px 3px #ff0000; */
+
+  box-shadow: inset 0px 0px 10px 3px #ff000055, 
+  0px 0px 0px 1px #ff0000;
+}
+.card--yellow > .card-in {
+  box-shadow: inset 0px 0px 0px 0px #e5ff0040, 
+  inset 0px 0px 5px 0px #ffea0099,
+  
+  0px 0px 0px 1px #ffea00;
+  /* border-radius: 3px; */
+}

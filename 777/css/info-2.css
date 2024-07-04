@@ -1,0 +1,8 @@
+.info-2 {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.info-2 h1 {
+  font-size: 3em;
+}

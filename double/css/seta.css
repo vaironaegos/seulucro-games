@@ -1,0 +1,27 @@
+.seta {
+  width: 21px;
+  height: 21px;
+  /* background-color: white; */
+  position: absolute;
+  top: 22%;
+  left: 50px;
+  border: solid 10px transparent;
+  z-index: 2;
+  border-top: solid 10px white;
+
+  left: 50%;
+  transform: translate(-50%);
+
+}
+
+.seta::after {
+  content: "";
+  width: 1px;
+  height: 120px;
+  background-color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translateX(-0px);
+  opacity: 0.2;
+}

@@ -1,0 +1,14 @@
+npm install webpack webpack-cli
+npx webpack
+npx webpack-dev-server
+
+npm install --save-dev html-webpack-plugin
+npm install file-loader --save-dev
+npm install --save-dev style-loader
+npm install --save-dev css-loader
+npm install --save-dev style-loader css-loader
+npm install --save-dev mini-css-extract-plugin
+npm install @babel/core @babel/preset-env --save-dev
+npm install --save-dev mini-css-extract-plugin
+npm install --save-dev copy-webpack-plugin
+npm install --save-dev imagemin-webpack-plugin

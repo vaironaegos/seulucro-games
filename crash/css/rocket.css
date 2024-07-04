@@ -1,0 +1,43 @@
+.fire{
+  /* background-color: red; */
+  position: relative;
+  width: min-content;
+  display: grid;
+  /* mix-blend-mode: color-dodge; */
+  /* mix-blend-mode:darken; */
+  /* mix-blend-mode: lighten; */
+  rotate: 90deg;
+  width: 100px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  mix-blend-mode: lighten;
+  z-index: 10;
+  scale: 0.8;
+}
+
+
+#fire2{
+  width: 300px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  mix-blend-mode: lighten;
+  z-index: 3;
+}
+
+#fire1{
+  width: 300px;
+  rotate: 180deg;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  mix-blend-mode: lighten;
+  translate: 0 10px;
+  z-index: 3;
+}

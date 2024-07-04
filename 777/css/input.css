@@ -1,0 +1,44 @@
+.input {
+  position: relative;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.input div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  pointer-events: none;
+  width: 50px;
+}
+
+.input input {
+  -webkit-appearance: none;
+  background-color: var(--gray-2);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  height: 10px;
+  opacity: 1;
+  cursor: pointer;
+  appearance: none;
+}
+
+.input input::-webkit-slider-thumb {
+  width: 50px;
+  height: 30px;
+  border-radius: 50%;
+  background: blue;
+  -webkit-appearance: none;
+  background: linear-gradient(var(--red-1), var(--red-2));
+  border-radius: 5px;
+  padding: 0px 15px;
+}

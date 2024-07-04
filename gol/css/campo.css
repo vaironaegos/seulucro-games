@@ -1,0 +1,28 @@
+#el_campo{
+    /* width: 95vw;
+    height: 56vw; */
+
+    width: 100vw;
+    height: 56vw;
+    
+    max-width: calc(100vw - 0vh);
+    max-height: calc(100%);
+    /* max-height: 768px; */
+
+    background: url(../imgs/background.jpg);
+    background-size: cover;
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border-radius: 10px; */
+    /* resize: both; */
+    overflow: hidden;
+}
+
+#el_campo > *{
+    position: absolute
+}
